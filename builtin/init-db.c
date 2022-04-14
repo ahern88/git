@@ -425,6 +425,7 @@ int init_db(const char *git_dir, const char *real_git_dir,
 
 	validate_hash_algorithm(&repo_fmt, hash);
 
+	// 创建 .git文件夹，初始化  hooks，info，refs，HEAD 等等文件或文件夹
 	reinit = create_default_files(template_dir, original_git_dir,
 				      initial_branch, &repo_fmt,
 				      flags & INIT_DB_QUIET);
@@ -432,6 +433,7 @@ int init_db(const char *git_dir, const char *real_git_dir,
 		warning(_("re-init: ignored --initial-branch=%s"),
 			initial_branch);
 
+	// 创建object文件夹
 	create_object_directory();
 
 	if (get_shared_repository()) {

@@ -710,7 +710,7 @@ static int checkout(int submodule_progress, int filter_submodules)
 
 	free(head);
 
-	if (write_locked_index(&the_index, &lock_file, COMMIT_LOCK))
+	if (write_locked_index(&the_index, &lock_file, COMMIT_LOCK)) // 核心逻辑，写index文件
 		die(_("unable to write new index file"));
 
 	err |= run_hooks_l("post-checkout", oid_to_hex(null_oid()),

@@ -466,7 +466,7 @@ static int add_files(struct dir_struct *dir, int flags)
 					   dir->entries[i]->name);
 			continue;
 		}
-		if (add_file_to_index(&the_index, dir->entries[i]->name, flags)) {
+		if (add_file_to_index(&the_index, dir->entries[i]->name, flags)) { // 将文件加入到object中
 			if (!ignore_add_errors)
 				die(_("adding files failed"));
 			exit_status = 1;

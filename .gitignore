@@ -245,3 +245,5 @@ Release/
 /git.VC.db
 *.dSYM
 /contrib/buildsystems/out
+.DS_Store
+.idea/
